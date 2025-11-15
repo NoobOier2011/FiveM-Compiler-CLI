@@ -73,13 +73,13 @@ for i in command:
 
 logger.info("Environment is OK now!")
 
-logger.ask("Start FiveM! compile? (y/n)")
+logger.info("Start FiveM! compile? (y/n)")
 answer = input()
 if answer != "n":
     logger.info("Bye~ (・ω・)ノ")
     sys.exit(0)
 
-logger.ask("what do you want to compile? (server/client(five)/rdr3)")
+logger.info("what do you want to compile? (server/client(five)/rdr3)")
 answer = input()
 if answer != "server" and answer != "client" and answer != "fivem" and answer != "rdr3":
     logger.error("Check your answer!")
