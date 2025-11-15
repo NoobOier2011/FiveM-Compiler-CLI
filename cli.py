@@ -11,6 +11,9 @@ running_dir = '.\\'
 
 logger.info("Ciallo~ (∠・ω< )⌒★")
 
+logger.info("Be sure you install Visual Studio ", Workloads = ''' .NET desktop development, Desktop development with C++, Windows application development'''
+,Individual_components = ''' .NET Framework 4.6 targeting pack, Windows 11 SDK (10.0.22000.0)''')
+
 logger.info("download directory", path = download_dir)
 
 logger.info("Your Arch? 'x86_64' or 'i686'")
@@ -70,5 +73,20 @@ for i in command:
 
 logger.info("Environment is OK now!")
 
-logger.info("Compile FiveM!")
+logger.ask("Start FiveM! compile? (y/n)")
+answer = input()
+if answer != "n":
+    logger.info("Bye~ (・ω・)ノ")
+    sys.exit(0)
+
+logger.ask("what do you want to compile? (server/client(five)/rdr3)")
+answer = input()
+if answer != "server" and answer != "client" and answer != "fivem" and answer != "rdr3":
+    logger.error("Check your answer!")
+    sys.exit(0)
+
+logger.info("Compile FiveM! now")
 os.system(running_dir + "\script\Complier.cmd")
+os.system("fxd gen -game " + answer)
+os.system("fxd vs -game " + answer)
+logger.info("All done! Ciallo~ (∠・ω< )⌒★")
